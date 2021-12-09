@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'',//TODO: localhost:4200/
+    // la ruta raiz va a cargar el home module aplicando lazy-loading
+    loadChildren:()=> import(`./modules/home/home.module`).then(m=>m.HomeModule)
     
   }
 ];
